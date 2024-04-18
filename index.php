@@ -1,3 +1,4 @@
+<!-- начальная страница корзины -->
 <!DOCTYPE html>
 <html lang="en">
 <head>

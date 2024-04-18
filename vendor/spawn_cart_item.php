@@ -1,14 +1,21 @@
+<!-- формирует таблицу с продуктами из корзины пользователя, извлекая информацию о каждом продукте из базы данных и обновляя итоговую стоимость заказа -->
 <?php 
-
+    //Подключение к базе данных и инициализация переменных
     require_once 'connect.php';
     $numberOfPositions = 0;
+    
+    //Проверка наличия данных в сессии и обработка корзины
     if(isset($_SESSION['cart'])):
         $cost = 0;
+        //Обработка каждого элемента корзины
         foreach($_SESSION['cart'] as $item):  
-            $numberOfPositions++;          
+            $numberOfPositions++;  
+            //Запрос к базе данных для получения информации о продукте
             $id = $item['id'];
             $product = mysqli_query($connect, "SELECT * FROM `products` WHERE `id` = '$id'");
+            //Вывод информации о продукте в таблице
             while ($row = mysqli_fetch_assoc($product)):
+                //Обновление итоговой стоимости заказ
                 $cost = $cost + $row['price']?>
                 <tr>
                     <th scope="row">

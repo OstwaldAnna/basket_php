@@ -1,3 +1,4 @@
+<!-- сохраняет данные из $_POST в массиве $_SESSION['cart'] -->
 <?php
     $counter = 0;
     session_start();

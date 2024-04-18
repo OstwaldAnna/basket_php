@@ -1,3 +1,4 @@
+<!-- страница со всеми заказами -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
